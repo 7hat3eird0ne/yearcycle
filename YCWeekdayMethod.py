@@ -1,7 +1,10 @@
 #memorisation stuff
 EYCIL = [1, 29, 57, 85, 125, 153, 181, 221, 249, 277, 317, 345, 373]
-WEEKDAY_NUMBERS = [3,1,6,4,2,0,5]
 MONTH_OFFSET = [0,3,3,6,1,4,6,2,5,0,3,5]
+SATURDAY_CYCLE = [3,1,6,4,2,0,5]
+FRIDAY_CYCLE = [3,1,6,1,6,4,2,0,5]
+WEDNESDAY_CYCLE = [3,1,6,4,6,4,2,0,5]
+MONDAY_CYCLE = [3,1,6,4,2,4,2,0,5]
 
 def weekday(date):
     #sets variables
@@ -24,7 +27,15 @@ def weekday(date):
 
     remainder = (remainder - initial_year + 1) // 4 #4.
 
-    weekday = WEEKDAY_NUMBERS[remainder - 1] #5.
+    #5.
+    if  initial_year == 85:
+        weekday = FRIDAY_CYCLE[remainder - 1]
+    elif initial_year == 181:
+        weekday = WEDNESDAY_CYCLE[remainder - 1]
+    elif initial_year == 277:
+        weekday = MONDAY_CYCLE[remainder - 1]
+    else:
+        weekday = SATURDAY_CYCLE[remainder - 1]
 
     weekday += year % 4 #6.
 
