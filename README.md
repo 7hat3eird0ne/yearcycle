@@ -186,4 +186,6 @@ This is my "rough" explanation of this calculator.
 
 1. Offset the weekday by remainder of the current day by 7
 
+1. Offset the weekday back by 1
+
 Congratulations, you have found the weekday of the date!

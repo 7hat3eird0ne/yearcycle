@@ -46,7 +46,7 @@ def weekday(date):
     if ( (year - year % 4) % 400 == 0 or (year - year % 4) % 100 != 0 ) and ( year % 4 != 0 or month != 1 and month != 2 ):
         weekday += 1
         
-    weekday += day % 7 - 1 #9
+    weekday += day % 7 - 1 #9. and 10.
 
     weekday %= 7 #Converting weekdays to cycles
 
