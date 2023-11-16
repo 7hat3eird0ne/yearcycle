@@ -73,6 +73,5 @@ def weekday(date):
         return 'Sunday'
 
 if __name__ == '__main__':
-    while True:
-        date = input('DDMMYYYY... - ') #gets requested date
-        weekday(date)
+    date = input('DDMMYYYY... - ') #gets requested date
+    weekday(date)
