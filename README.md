@@ -36,7 +36,7 @@ This is my "rough" explanation of this calculator.
 
 1. Get a remainder of the last leap year by 400
 
-1. Find a initial year in extended year cycle which is the largest year smaller than the remainder, if remainder is 0, initial year is 373
+1. Find a initial year in extended year cycle which is the largest year smaller than the remainder, if remainder is 0, replace it with 400
     - Extended Year Cycle Initial List:
         - Saturday part:
             - 1
