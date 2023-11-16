@@ -43,7 +43,7 @@ def weekday(date):
     weekday += MONTH_OFFSET[month - 1] #7.
 
     #8.
-    if year % 4 != 0 or ( month != 1 and month != 2 ):
+    if ( (year - year % 4) % 400 == 0 or (year - year % 4) % 100 != 0 ) and ( year % 4 != 0 or month != 1 and month != 2 ):
         weekday += 1
         
     weekday += day % 7 - 1 #9
@@ -73,5 +73,6 @@ def weekday(date):
         return 'Sunday'
 
 if __name__ == '__main__':
-    date = input('DDMMYYYY... - ') #gets requested date
-    weekday(date)
+    while True:
+        date = input('DDMMYYYY... - ') #gets requested date
+        weekday(date)

@@ -177,7 +177,7 @@ This is my "rough" explanation of this calculator.
         - first day offset is 5
     - Note: Again, memorisation of this list should be done only if planned to be used practicly, but if that's case, then it is much more importmant to memorise than EYCIL
 
-1. If the current year is a leap year, and current month isn't January or February, offset the weekday by 1
+1. If the current year is a real (centuries don't count) leap year, and current month isn't January or February, offset the weekday by 1
 
 1. Offset the weekday by remainder of the current day by 7
 
