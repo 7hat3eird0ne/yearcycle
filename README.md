@@ -31,8 +31,8 @@ Last I will shift it again to match day
 This is my "rough" explanation of this calculator.
 
 ## Method
-1. If the current year isn't a leap year already, find out last leap year from the current year and remember the offset
-    - Note: leap year is always divisible by 4, centuries are never leap years unless divisble by 400
+1. If the current year isn't a leap year already, find out last leap year (including centuries, even though they are not leap years) from the current year and remember the offset
+    - Note: leap year is always divisible by 4, although normaly centuries are never leap years unless divisble by 400, in this example lets pretend that there are each century is always a leap year, because later it will be much easier
 
 1. Get a remainder of the last leap year by 400
 
@@ -59,26 +59,93 @@ This is my "rough" explanation of this calculator.
 
 1. Do calculation "(remainder - initial year) / 4"
 
-1. Saturday Cycle:
-    - if new number is 1:
-        - Leap year day is Thursday
-    - if new number is 2:
-        - Leap year day is Tuesday
-    - if new number is 3:
-        - Leap year day is Sunday
-    - if new number is 4:
-        - Leap year day is Friday
-    - if new number is 5:
-        - Leap year day is Wednesday
-    - if new number is 6:
-        - Leap year day is Monday
-    - if new number is 7:
-        - Leap year day is Saturday
-    
-    - For Friday Cycle "427275316", Wednesday Cycle "427575316", Monday Cycle "427535316"
+1.  Use the new number to get weekday of first day of the leap year you chose
+    - Explanation for "Special Cycles":
+        - Friday Cycle is for the initial year 85
+        - Wednesday Cycle is for the initial year 181
+        - Monday Cycle is for the initial year 277
+    - Cycles to weekday list:
+        - Saturday Cycle:
+            - if new number is 1:
+                - Leap year day is Thursday
+            - if new number is 2:
+                - Leap year day is Tuesday
+            - if new number is 3:
+                - Leap year day is Sunday
+            - if new number is 4:
+                - Leap year day is Friday
+            - if new number is 5:
+                - Leap year day is Wednesday
+            - if new number is 6:
+                - Leap year day is Monday
+            - if new number is 7:
+                - Leap year day is Saturday
 
-    - Note: You can memorise a sequence of numbers "4275316", with first number matching with Monday, second with Tuesday, etc.
-    - Note 2: By "leap year day", I mean first day of the original leap year you chose.
+        - Friday Cycle:
+            - if new number is 1:
+                - Leap year day is Thursday
+            - if new number is 2:
+                - Leap year day is Tuesday
+            - if new number is 3:
+                - Leap year day is Sunday
+            - if new number is 4:
+                - Leap year day is Friday
+            - if new number is 5:
+                - Leap year day is Tuesday
+            - if new number is 6:
+                - Leap year day is Sunday
+            - if new number is 7:
+                - Leap year day is Friday
+            - if new number is 8:
+                - Leap year day is Wednesday
+            - if new number is 9:
+                - Leap year day is Monday
+            - if new number is 10:
+                - Leap year day is Saturday
+        
+        - Wednesday Cycle:
+            - if new number is 1:
+                - Leap year day is Thursday
+            - if new number is 2:
+                - Leap year day is Tuesday
+            - if new number is 3:
+                - Leap year day is Sunday
+            - if new number is 4:
+                - Leap year day is Friday
+            - if new number is 5:
+                - Leap year day is Wednesday
+            - if new number is 6:
+                - Leap year day is Sunday
+            - if new number is 7:
+                - Leap year day is Friday
+            - if new number is 8:
+                - Leap year day is Wednesday
+            - if new number is 9:
+                - Leap year day is Monday
+            - if new number is 10:
+                - Leap year day is Saturday
+        - Monday Cycle:
+            - if new number is 1:
+                - Leap year day is Thursday
+            - if new number is 2:
+                - Leap year day is Tuesday
+            - if new number is 3:
+                - Leap year day is Sunday
+            - if new number is 4:
+                - Leap year day is Friday
+            - if new number is 5:
+                - Leap year day is Wednesday
+            - if new number is 6:
+                - Leap year day is Monday
+            - if new number is 7:
+                - Leap year day is Friday
+            - if new number is 8:
+                - Leap year day is Wednesday
+            - if new number is 9:
+                - Leap year day is Monday
+            - if new number is 10:
+                - Leap year day is Saturday
+        - Note 2: By "leap year day", I mean first day of the original leap year you chose.
 
 1. Offset the leap year day by same amount of days into future that you originaly offset to get the leap year, this way you now got first day of the year
     - Note: offset to get the leap year in years = offset to get the first day in the original year

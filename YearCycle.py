@@ -2,11 +2,11 @@
 EYCIL = [1, 29, 57, 85, 125, 153, 181, 221, 249, 277, 317, 345, 373]
 MONTH_OFFSET = [0,3,3,6,1,4,6,2,5,0,3,5]
 SATURDAY_CYCLE = [3,1,6,4,2,0,5]
-FRIDAY_CYCLE = [3,1,6,1,6,4,2,0,5]
-WEDNESDAY_CYCLE = [3,1,6,4,6,4,2,0,5]
-MONDAY_CYCLE = [3,1,6,4,2,4,2,0,5]
+FRIDAY_CYCLE = [3,1,6,4,1,6,4,2,0,5]
+WEDNESDAY_CYCLE = [3,1,6,4,2,6,4,2,0,5]
+MONDAY_CYCLE = [3,1,6,4,2,0,4,2,0,5]
 
-def weekday(date):
+def weekday(date):  
     #sets variables
     day = int(date[0:2])
     month = int(date[2:4])
@@ -18,6 +18,7 @@ def weekday(date):
 
     #3.
     if remainder == 0:
+        remainder = 400
         initial_year = EYCIL[-1]
     else:
         for i in range(len(EYCIL)):
@@ -42,10 +43,10 @@ def weekday(date):
     weekday += MONTH_OFFSET[month - 1] #7.
 
     #8.
-    if year % 4 == 0 and month != 1 and month != 2:
+    if year % 4 != 0 or ( month != 1 and month != 2 ):
         weekday += 1
-
-    weekday += day % 7 #9.
+        
+    weekday += day % 7 - 1 #9
 
     weekday %= 7 #Converting weekdays to cycles
 
@@ -72,5 +73,6 @@ def weekday(date):
         return 'Sunday'
 
 if __name__ == '__main__':
-    date = input('DDMMYYYY... - ') #gets requested date
-    weekday(date)
+    while True:
+        date = input('DDMMYYYY... - ') #gets requested date
+        weekday(date)
