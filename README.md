@@ -178,11 +178,11 @@ This is my "rough" explanation of this calculator.
     - Note: Again, memorisation of this list should be done only if planned to be used practicly, but if that's case, then it is much more importmant to memorise than EYCIL
 
 1. 
-- If either
-    - The current year is a real (centuries don't count) leap year, and current month isn't January or February
-    - The current year is right after real leap year
-- Then:
-    - Offset weekday by 1
+    - If either
+        - The current year is a real (centuries don't count) leap year, and current month isn't January or February
+        - The current year is right after real leap year
+    - Then:
+        - Offset weekday by 1
 
 1. Offset the weekday by remainder of the current day by 7
 
